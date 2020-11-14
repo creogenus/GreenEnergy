@@ -1,0 +1,2 @@
+Sunner,SunnerPanel 2.0,Monocrystalline silicon,0.15,50,500
+Sunner,SunnerPanel 1.0,Monocrystalline silicon,0.10,45,350

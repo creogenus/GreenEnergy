@@ -1,0 +1,7 @@
+D:\Architecture Programming\GreenEnergy\GreenEnergy\bin\Debug\GreenEnergy.exe.config
+D:\Architecture Programming\GreenEnergy\GreenEnergy\bin\Debug\GreenEnergy.exe
+D:\Architecture Programming\GreenEnergy\GreenEnergy\bin\Debug\GreenEnergy.pdb
+D:\Architecture Programming\GreenEnergy\GreenEnergy\obj\Debug\GreenEnergy.csprojAssemblyReference.cache
+D:\Architecture Programming\GreenEnergy\GreenEnergy\obj\Debug\GreenEnergy.csproj.CoreCompileInputs.cache
+D:\Architecture Programming\GreenEnergy\GreenEnergy\obj\Debug\GreenEnergy.exe
+D:\Architecture Programming\GreenEnergy\GreenEnergy\obj\Debug\GreenEnergy.pdb
