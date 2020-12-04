@@ -14,6 +14,6 @@ namespace GE_BD
         public double Windiness { get; set; }
         public double Average_temperature { get; set; }
         public double Humidity { get; set; }
-        public double Sunshine { get; set; }
+        public double Sunshine { get; set; }//?
     }
 }
