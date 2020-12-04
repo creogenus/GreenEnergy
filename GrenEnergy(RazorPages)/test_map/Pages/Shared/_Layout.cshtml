@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - test_map</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,700,900" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow:700" rel="stylesheet" />
+</head>
+<body style="opacity: 1;" class="lang-ru">
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-wrap">
+                <strong class="main-logo">
+                    <a>
+                        <img class="logo-def" src="~/img/logo2.svg" alt="image description">
+                        <span class="logo-text">GREEN ENERGY</span>
+                    </a>
+                </strong>
+                <nav class="header-nav">
+                    <ul class="nav-list">
+                        <li class>
+                            <a href="#to_page-container">О нас</a>
+                        </li>
+                        <li class="to_map">
+                            <a href="#map_here">Карта</a>
+                        </li>
+                        <li class="to_contact">
+                            <a href="#contact">Контакты</a>
+                        </li>
+                    </ul>
+                    <!--<div class="btn-wrap">
+                <a class="button header-bth" href="#zayvka" id="order-form">Заказать</a></div>-->
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="container3">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <ul>
+            <li>
+                <a class="logo" href="#">GREEN ENERGY <i>&copy; 2020</i></a>
+            </li>
+
+            <li>
+                <p class="services">О нас</p>
+            </li>
+
+            <li>
+                <p class="reachus">Карта</p>
+            </li>
+
+            <li>
+                <p class="clients">Контакты</p>
+            </li>
+        </ul>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
