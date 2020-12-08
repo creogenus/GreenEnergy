@@ -1,4 +1,4 @@
-﻿@media screen and (min-width:300px) {
+@media screen and (min-width:300px) {
 
     .main-logo {
         position: absolute;
@@ -18,7 +18,7 @@
     }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1200px) {
     .header {
         position: fixed;
         top: 0;
@@ -366,11 +366,11 @@ main {
 }
 
 .blog-info_image--bg {
-    height: auto;
-    width: auto;
+    height: 80%;
+    width: 100%;
     position: absolute;
-    min-width: 100vw;
-    max-height: 750px;
+    min-width: 100px;
+    max-height: 2000px;
 }
 
 .blog-page_image-container {
@@ -390,18 +390,19 @@ main {
 }
 
     .blog-page_image-text h1 {
-        font: normal 4.25rem "Bebas Neue Cyrillic",sans-serif;
+        font-family: 'Balsamiq Sans', bold;
         line-height: 1.2;
         text-transform: uppercase;
         max-width: 90%;
         text-align: center;
         margin: auto;
+        font-size: 50px;
     }
 
 h1 {
     font-size: 2em;
     margin: .67em 0;
-    font-family: 'Bebas Neue Cyrillic',sans-serif;
+    font-family: 'Montserrat Alternates', sans-serif;
     font-weight: 400;
 }
 
@@ -460,22 +461,27 @@ p {
 .modalDialog {
     position: fixed;
     font-family: Arial, Helvetica, sans-serif;
-    top: 0;
+    top: 7%;
     right: 0;
     bottom: 0;
     left: 0;
     background: rgba(0,0,0,0.8);
-    z-index: 99999;
-    -webkit-transition: opacity 400ms ease-in;
-    -moz-transition: opacity 400ms ease-in;
-    transition: opacity 400ms ease-in;
-    display: none;
-    pointer-events: none;
+    z-index: 1050;
+    opacity: 0; /* по умолчанию модальное окно прозрачно */
+    -webkit-transition: opacity 200ms ease-in;
+    -moz-transition: opacity 200ms ease-in;
+    transition: opacity 200ms ease-in; /* анимация перехода */
+    pointer-events: none; /* элемент невидим для событий мыши */
+    margin: 0;
+    padding: 0;
 }
 
     .modalDialog:target {
         display: block;
         pointer-events: auto;
+        opacity: 1;
+        overflow-x: auto;
+        overflow-y: auto;
     }
 
     .modalDialog > div {
@@ -489,34 +495,40 @@ p {
         background: -moz-linear-gradient(#fff, #f0f0f0);
         background: -webkit-linear-gradient(#fff, #f0f0f0);
         background: -o-linear-gradient(#fff, #f0f0f0);
+        
     }
+.modalDialog:active {
+    display: block;
+}
+/* свойства для заголовка модального окна */
+.modal-header {
+    //margin-bottom: 0px;
+}
 
+/* свойства для кнопки "Закрыть" */
 .close {
-    background: #606061;
-    color: #FFFFFF;
-    line-height: 25px;
-    position: absolute;
-    right: -12px;
-    text-align: center;
-    top: -10px;
-    width: 24px;
+    float: right;
+    font-family: sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
     text-decoration: none;
-    font-weight: bold;
-    -webkit-border-radius: 12px;
-    -moz-border-radius: 12px;
-    border-radius: 12px;
-    -moz-box-shadow: 1px 1px 3px #000;
-    -webkit-box-shadow: 1px 1px 3px #000;
-    box-shadow: 1px 1px 3px #000;
 }
-
-.close:hover {
-    background: #00d9ff;
-}
+    /* свойства для кнопки "Закрыть" при нахождении её в фокусе или наведении */
+    .close:focus, .close:hover {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+        opacity: .75;
+    }
 
 .m_map {
     position: relative;
     text-align: center;
+    overflow-x: auto;
 }
 
 
@@ -534,19 +546,22 @@ p {
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
+    height: 784px;
     width: 733px;
 }
 
 .description {
     position: absolute;
     padding: 20px;
+    font-size:14px;
     box-sizing: border-box;
     width: 300px;
-    height: 400px;
-    box-shadow: 0 0 32px 10px #ccc;
+    height: 90%;
+    //box-shadow : 0 0 32px 10px #ccc;
     left: 733px;
-    top: 170px;
+    top: 5%;
+    overflow-x: auto;
+    overflow-y: auto;
 }
 
 .container h1 {
