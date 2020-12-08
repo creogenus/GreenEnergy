@@ -30,9 +30,9 @@ namespace test_map.Pages
                 for (int i = 0; i < arr.Length; i++)
                 {
                     out_str += $"<p> Config: {i + 1}<p>" +
-                        $"<div class = 'container-fluid'><p>Accumulator - {arr[i].accumulator.name}<p><img src = '{arr[i].accumulator.name}.jpg' class ='img-fluid'></p></p>" +
-                        $" <p>Electric Source - {arr[i].esource.name}<p><img src = '{arr[i].esource.name}.jpg' class ='img-fluid'></p></p>" +
-                        $"<p>Inverter - {arr[i].inverter.name}<p><img src = '{arr[i].inverter.name}.jpg' class ='img-fluid'></p></p> " +
+                        $"<div class = 'container-fluid'><p>Accumulator - {arr[i].accumulator.name}<p><img src = 'img/{arr[i].accumulator.name}.jpg' class ='img-fluid'></p></p>" +
+                        $" <p>Electric Source - {arr[i].esource.name}<p><img src = 'img/{arr[i].esource.name}.jpg' class ='img-fluid'></p></p>" +
+                        $"<p>Inverter - {arr[i].inverter.name}<p><img src = 'img/{arr[i].inverter.name}.jpg' class ='img-fluid'></p></p> " +
                         $"<p>Full Cost - {arr[i].full_cost}</p> " +
                         $"<p>Full Power - {arr[i].full_power}</p>" +
                         $"<p>Efficiency - {arr[i].efficiency}</p></div>";
