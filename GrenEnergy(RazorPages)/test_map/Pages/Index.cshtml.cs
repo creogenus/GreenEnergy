@@ -17,8 +17,6 @@ namespace test_map.Pages
             _logger = logger;
         }
 
-        public string[] rrr = { "<h1>В Шацком районе преобладают пасмурные и облачные дни. Среднее количество солнечных часов - 5.75</h2> ", "В Ратно среднесуточное количество солнечных часов - 5.8" };
-
         public IActionResult OnGetFindUser(string name)
         {
 
