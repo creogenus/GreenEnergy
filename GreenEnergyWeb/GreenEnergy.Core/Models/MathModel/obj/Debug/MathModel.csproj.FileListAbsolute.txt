@@ -1,0 +1,6 @@
+D:\Architecture Programming\Math_Model\MathModel\bin\Debug\MathModel.dll
+D:\Architecture Programming\Math_Model\MathModel\bin\Debug\MathModel.pdb
+D:\Architecture Programming\Math_Model\MathModel\obj\Debug\MathModel.csprojAssemblyReference.cache
+D:\Architecture Programming\Math_Model\MathModel\obj\Debug\MathModel.csproj.CoreCompileInputs.cache
+D:\Architecture Programming\Math_Model\MathModel\obj\Debug\MathModel.dll
+D:\Architecture Programming\Math_Model\MathModel\obj\Debug\MathModel.pdb
