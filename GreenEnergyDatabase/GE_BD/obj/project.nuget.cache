@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jXTlMliFUuEP1PITarZmwF7kcgbzlxjmcbwMYOBuKYcvl+VNWy+X40a4ALE3KIc2t+RKiy1GuspMU6ObqgiWdg==",
+  "dgSpecHash": "AesJ9/yktg5N72EoakqwfxrOBa+Z3xIS3OCFhq833oNYs6tDWf4QitKQ6tA1uFbKMJuH9wmz4SO4padDkYYHoA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Виталик\\source\\repos\\GE_BD\\GE_BD\\GE_BD.csproj",
+  "projectFilePath": "C:\\Users\\Виталик\\Documents\\GitHub\\GreenEnergy\\GreenEnergyDatabase\\GE_BD\\GE_BD.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Виталик\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Виталик\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

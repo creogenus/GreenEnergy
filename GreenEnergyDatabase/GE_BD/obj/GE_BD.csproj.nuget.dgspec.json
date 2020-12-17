@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Виталик\\source\\repos\\GE_BD\\GE_BD\\GE_BD.csproj": {}
+    "C:\\Users\\Виталик\\Documents\\GitHub\\GreenEnergy\\GreenEnergyDatabase\\GE_BD\\GE_BD.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Виталик\\source\\repos\\GE_BD\\GE_BD\\GE_BD.csproj": {
+    "C:\\Users\\Виталик\\Documents\\GitHub\\GreenEnergy\\GreenEnergyDatabase\\GE_BD\\GE_BD.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Виталик\\source\\repos\\GE_BD\\GE_BD\\GE_BD.csproj",
+        "projectUniqueName": "C:\\Users\\Виталик\\Documents\\GitHub\\GreenEnergy\\GreenEnergyDatabase\\GE_BD\\GE_BD.csproj",
         "projectName": "GE_BD",
-        "projectPath": "C:\\Users\\Виталик\\source\\repos\\GE_BD\\GE_BD\\GE_BD.csproj",
+        "projectPath": "C:\\Users\\Виталик\\Documents\\GitHub\\GreenEnergy\\GreenEnergyDatabase\\GE_BD\\GE_BD.csproj",
         "packagesPath": "C:\\Users\\Виталик\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Виталик\\source\\repos\\GE_BD\\GE_BD\\obj\\",
+        "outputPath": "C:\\Users\\Виталик\\Documents\\GitHub\\GreenEnergy\\GreenEnergyDatabase\\GE_BD\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Виталик\\AppData\\Roaming\\NuGet\\NuGet.Config",

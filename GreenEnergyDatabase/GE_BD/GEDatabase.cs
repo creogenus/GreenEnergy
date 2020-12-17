@@ -11,7 +11,6 @@ namespace GE_DB
         public static GEDatabase Init(string Connection_String)
         {
             //"Server=(localdb)\\mssqllocaldb;Database=GE_BD;Trusted_Connection=True;"
-            //return new GEDatabase(Connection_String);
             return new GEDatabase(Connection_String);
         }
 

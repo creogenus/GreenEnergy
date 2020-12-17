@@ -14,7 +14,7 @@ namespace GE_DB
         public string Material { get; set; }
         public double Price { get; set; }
 
-        public object Image { get; set; }
+        public byte[] Image { get; set; }
 
         public double Capacity { get; set; }
         public double Resource { get; set; }
