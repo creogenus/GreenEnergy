@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace GE_BD
+namespace GE_DB
 {
     public enum type { Int = 1, Double = 2, String = 3}
     public class Column
@@ -26,22 +26,38 @@ namespace GE_BD
         { 
             Columns = new List<Column>();
         }
-
+        new public string ToString()
+        {
+            string temp = "\n";
+            foreach (Column c in Columns)
+                temp += c.Name.PadLeft(c.Length / 2 + c.Name.Length / 2, '-').PadRight(c.Length, '-') + "|";
+            return temp;
+        }
     }
     class Program
     {
         static void Main(string[] args)
         {
             Class EnergySource_Class = new Class();
+
             EnergySource_Class.Columns.Add(new Column("Id", 5, type.Int));
+            EnergySource_Class.Columns.Add(new Column("Namе", 15, type.String));
+            EnergySource_Class.Columns.Add(new Column("Brand", 10, type.String));
             EnergySource_Class.Columns.Add(new Column("Type", 10, type.String));
-            EnergySource_Class.Columns.Add(new Column("Name", 15, type.String));
-            EnergySource_Class.Columns.Add(new Column("Brand", 15, type.String));
-            EnergySource_Class.Columns.Add(new Column("Voltage", 10, type.Int));
-            EnergySource_Class.Columns.Add(new Column("Amperage", 10, type.Int));
+            EnergySource_Class.Columns.Add(new Column("Material", 10, type.String));
             EnergySource_Class.Columns.Add(new Column("Price", 10, type.Double));
 
-            using (GE_BDContext db = new GE_BDContext())
+            EnergySource_Class.Columns.Add(new Column("V_wrk", 10, type.Double));
+            EnergySource_Class.Columns.Add(new Column("A_wrk", 10, type.Double));
+
+            EnergySource_Class.Columns.Add(new Column("A_sc", 10, type.Double));
+            EnergySource_Class.Columns.Add(new Column("V_max", 10, type.Double));
+            EnergySource_Class.Columns.Add(new Column("A_max", 10, type.Double));
+
+            EnergySource_Class.Columns.Add(new Column("H", 10, type.Double));
+            EnergySource_Class.Columns.Add(new Column("W", 10, type.Double));
+
+            using (GE_DBContext db = new GE_DBContext())
             {
                 while (true)
                 {
@@ -69,12 +85,10 @@ namespace GE_BD
                                     if (DB_ES.Count == 0) Console.WriteLine("\nТаблица пуста");
                                     else
                                     {
-                                        Console.Write("\n");
-                                        foreach (Column c in EnergySource_Class.Columns) Console.Write(c.Name.PadLeft(c.Length/2 + c.Name.Length/2, '-').PadRight(c.Length, '-') + "|");
-                                        Console.Write("\n");
+                                        Console.WriteLine(EnergySource_Class.ToString());
                                         foreach (EnergySource ES in DB_ES)
                                         {
-                                            Console.WriteLine("{0}|{1}|{2}|{3}|{4}|{5}|{6}|", ES.Id.ToString().PadRight(EnergySource_Class.Columns[0].Length,' '), ES.Type.PadRight(EnergySource_Class.Columns[1].Length, ' '), ES.Name.PadRight(EnergySource_Class.Columns[2].Length, ' '), ES.Brand.PadRight(EnergySource_Class.Columns[3].Length, ' '), ES.Voltage.ToString().PadRight(EnergySource_Class.Columns[4].Length, ' '), ES.Amperage.ToString().PadRight(EnergySource_Class.Columns[5].Length, ' '), ES.Price.ToString().PadRight(EnergySource_Class.Columns[6].Length, ' '));
+                                            Console.WriteLine(ES_ToString(ES, EnergySource_Class));
                                         }
                                     }
                                     break;
@@ -89,24 +103,44 @@ namespace GE_BD
                                         if (ES == null) Console.WriteLine("\nТаблица не найдена");
                                         else
                                         {
-                                            Console.Write("\n");
-                                            foreach (Column c in EnergySource_Class.Columns) Console.Write(c.Name.PadLeft(c.Length / 2 + c.Name.Length / 2, '-').PadRight(c.Length, '-') + "|");
-                                            Console.Write("\n");
-                                            Console.WriteLine("{0}|{1}|{2}|{3}|{4}|{5}|{6}|", ES.Id.ToString().PadRight(EnergySource_Class.Columns[0].Length, ' '), ES.Type.PadRight(EnergySource_Class.Columns[1].Length, ' '), ES.Name.PadRight(EnergySource_Class.Columns[2].Length, ' '), ES.Brand.PadRight(EnergySource_Class.Columns[3].Length, ' '), ES.Voltage.ToString().PadRight(EnergySource_Class.Columns[4].Length, ' '), ES.Amperage.ToString().PadRight(EnergySource_Class.Columns[5].Length, ' '), ES.Price.ToString().PadRight(EnergySource_Class.Columns[6].Length, ' '));
+                                            Console.WriteLine(EnergySource_Class.ToString());
+                                            Console.WriteLine(ES_ToString(ES, EnergySource_Class));
                                         }
                                     }
                                     break;
                                 }
                             case 3:
                                 {
-                                    string TName = ConsoleString(EnergySource_Class.Columns[0].Name);
-                                    string TType = ConsoleString(EnergySource_Class.Columns[0].Name);
-                                    string TBrand = ConsoleString(EnergySource_Class.Columns[0].Name);
-                                    double TVoltage = ConsoleDouble(EnergySource_Class.Columns[0].Name);
-                                    double TAmperage = ConsoleDouble(EnergySource_Class.Columns[0].Name);
-                                    double TPrice = ConsoleDouble(EnergySource_Class.Columns[0].Name);
-                                    db.EnergySources.Add(new EnergySource { Name = TName, Type = TType, Brand = TBrand, Voltage = TVoltage, Amperage = TAmperage, Price = TPrice });
+
+                                    object[] rows = new object[EnergySource_Class.Columns.Count - 1];
+                                    for(int i = 0; i < rows.Length; i++)
+                                    {
+                                        rows[i] = ConsoleGet(EnergySource_Class.Columns[i+1]);
+                                    }
+                                    EnergySource ES = new EnergySource();
+
+                                    int ic = 0;
+
+                                    ES.Name = (string) rows[ic++];
+                                    ES.Brand = (string) rows[ic++];
+                                    ES.Type = (string) rows[ic++];
+                                    ES.Material = (string) rows[ic++];
+                                    ES.Price = (double) rows[ic++];
+
+                                    ES.Voltage_work = (double) rows[ic++];
+                                    ES.Amperage_work = (double) rows[ic++];
+
+                                    ES.Short_circuit_Amperage = (double) rows[ic++];
+
+                                    ES.Voltage_max = (double) rows[ic++];
+                                    ES.Amperage_max = (double) rows[ic++];
+
+                                    ES.Height = (double) rows[ic++];
+                                    ES.Width = (double) rows[ic++];
+
+                                    db.EnergySources.Add(ES);
                                     db.SaveChanges();
+
                                     break;
                                 }
                             case 4:
@@ -118,8 +152,8 @@ namespace GE_BD
                                     else
                                     {
                                         Console.WriteLine("Удалено отношение:");
-                                        foreach (Column c in EnergySource_Class.Columns) Console.Write(c.Name.PadLeft(c.Length / 2 + c.Name.Length / 2, '-').PadRight(c.Length, '-') + "|");
-                                        Console.WriteLine("{0}|{1}|{2}|{3}|{4}|{5}|{6}|", ES.Id.ToString().PadRight(EnergySource_Class.Columns[0].Length, ' '), ES.Type.PadRight(EnergySource_Class.Columns[1].Length, ' '), ES.Name.PadRight(EnergySource_Class.Columns[2].Length, ' '), ES.Brand.PadRight(EnergySource_Class.Columns[3].Length, ' '), ES.Voltage.ToString().PadRight(EnergySource_Class.Columns[4].Length, ' '), ES.Amperage.ToString().PadRight(EnergySource_Class.Columns[5].Length, ' '), ES.Price.ToString().PadRight(EnergySource_Class.Columns[6].Length, ' '));
+                                        Console.WriteLine(EnergySource_Class.ToString());
+                                        Console.WriteLine(ES_ToString(ES, EnergySource_Class));
                                         db.EnergySources.Remove(ES);
                                         db.SaveChanges();
                                     }
@@ -131,6 +165,47 @@ namespace GE_BD
                 }
             }
         }
+
+        static string PadString(string str, int l)
+        {
+            if (str.Length == l) return str;
+            if (str.Length > l) return str.Substring(0, l);
+            else return str.PadRight(l, ' ');
+        }
+        static string ES_ToString(EnergySource ES, Class ES_Class)
+        {
+            int ic = 0;
+            return (PadString(ES.Id.ToString(), ES_Class.Columns[ic++].Length) + "|" +
+
+                    PadString(ES.Name.ToString(), ES_Class.Columns[ic++].Length) + "|" +
+                    PadString(ES.Brand.ToString(), ES_Class.Columns[ic++].Length) + "|" +
+                    PadString(ES.Type.ToString(), ES_Class.Columns[ic++].Length) + "|" +
+                    PadString(ES.Material.ToString(), ES_Class.Columns[ic++].Length) + "|" +
+                    PadString(ES.Price.ToString(), ES_Class.Columns[ic++].Length) + "|" +
+
+                    PadString(ES.Voltage_work.ToString(), ES_Class.Columns[ic++].Length) + "|" +
+                    PadString(ES.Amperage_work.ToString(), ES_Class.Columns[ic++].Length) + "|" +
+
+                    PadString(ES.Short_circuit_Amperage.ToString(), ES_Class.Columns[ic++].Length) + "|" +
+
+                    PadString(ES.Voltage_max.ToString(), ES_Class.Columns[ic++].Length) + "|" +
+                    PadString(ES.Amperage_max.ToString(), ES_Class.Columns[ic++].Length) + "|" +
+
+                    PadString(ES.Height.ToString(), ES_Class.Columns[ic++].Length) + "|" +
+                    PadString(ES.Width.ToString(), ES_Class.Columns[ic++].Length) + "|");
+
+        }
+
+        static object ConsoleGet(Column cln)
+        {
+            switch (cln.Type){
+                case type.Double: return ConsoleDouble(cln.Name);
+                case type.Int: return ConsoleInt(cln.Name);
+                case type.String: return ConsoleString(cln.Name);
+                default: return -1;
+            }
+        }
+
         static int ConsoleNumber(string text, int limit)
         {
             ConsoleKeyInfo CKI;

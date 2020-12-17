@@ -61,3 +61,4 @@ C:\Users\Виталик\source\repos\GE_BD\GE_BD\obj\Debug\netcoreapp3.1\GE_BD.c
 C:\Users\Виталик\source\repos\GE_BD\GE_BD\obj\Debug\netcoreapp3.1\GE_BD.dll
 C:\Users\Виталик\source\repos\GE_BD\GE_BD\obj\Debug\netcoreapp3.1\GE_BD.pdb
 C:\Users\Виталик\source\repos\GE_BD\GE_BD\obj\Debug\netcoreapp3.1\GE_BD.genruntimeconfig.cache
+C:\Users\Виталик\source\repos\GE_BD\GE_BD\obj\Debug\netcoreapp3.1\GE_BD.csprojAssemblyReference.cache
