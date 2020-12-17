@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ICT 1-3cource\\КАРТА\\GreenEnergy-master\\GrenEnergy(RazorPages)\\test_map\\test_map.csproj": {}
+    "D:\\GitHub\\GreenEnergy\\GreenEnergy(RazorPage)_3\\test_map\\test_map.csproj": {}
   },
   "projects": {
-    "D:\\ICT 1-3cource\\КАРТА\\GreenEnergy-master\\GrenEnergy(RazorPages)\\test_map\\test_map.csproj": {
+    "D:\\GitHub\\GreenEnergy\\GreenEnergy(RazorPage)_3\\test_map\\test_map.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ICT 1-3cource\\КАРТА\\GreenEnergy-master\\GrenEnergy(RazorPages)\\test_map\\test_map.csproj",
+        "projectUniqueName": "D:\\GitHub\\GreenEnergy\\GreenEnergy(RazorPage)_3\\test_map\\test_map.csproj",
         "projectName": "test_map",
-        "projectPath": "D:\\ICT 1-3cource\\КАРТА\\GreenEnergy-master\\GrenEnergy(RazorPages)\\test_map\\test_map.csproj",
-        "packagesPath": "C:\\Users\\nasty\\.nuget\\packages\\",
-        "outputPath": "D:\\ICT 1-3cource\\КАРТА\\GreenEnergy-master\\GrenEnergy(RazorPages)\\test_map\\obj\\",
+        "projectPath": "D:\\GitHub\\GreenEnergy\\GreenEnergy(RazorPage)_3\\test_map\\test_map.csproj",
+        "packagesPath": "C:\\Users\\scher\\.nuget\\packages\\",
+        "outputPath": "D:\\GitHub\\GreenEnergy\\GreenEnergy(RazorPage)_3\\test_map\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\nasty\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\scher\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -29,7 +29,6 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -41,11 +40,20 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
               "target": "Package",
               "version": "[3.1.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.1, )"
             }
           },
           "imports": [
@@ -58,6 +66,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.2, 3.1.2]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -66,7 +80,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

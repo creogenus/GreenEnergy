@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Виталик\\Documents\\GitHub\\GreenEnergy\\GreenEnergyDatabase\\GE_BD\\GE_BD.csproj": {}
+    "D:\\GitHub\\GreenEnergy\\GreenEnergyDatabase\\GE_BD\\GE_BD.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Виталик\\Documents\\GitHub\\GreenEnergy\\GreenEnergyDatabase\\GE_BD\\GE_BD.csproj": {
+    "D:\\GitHub\\GreenEnergy\\GreenEnergyDatabase\\GE_BD\\GE_BD.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Виталик\\Documents\\GitHub\\GreenEnergy\\GreenEnergyDatabase\\GE_BD\\GE_BD.csproj",
+        "projectUniqueName": "D:\\GitHub\\GreenEnergy\\GreenEnergyDatabase\\GE_BD\\GE_BD.csproj",
         "projectName": "GE_BD",
-        "projectPath": "C:\\Users\\Виталик\\Documents\\GitHub\\GreenEnergy\\GreenEnergyDatabase\\GE_BD\\GE_BD.csproj",
-        "packagesPath": "C:\\Users\\Виталик\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Виталик\\Documents\\GitHub\\GreenEnergy\\GreenEnergyDatabase\\GE_BD\\obj\\",
+        "projectPath": "D:\\GitHub\\GreenEnergy\\GreenEnergyDatabase\\GE_BD\\GE_BD.csproj",
+        "packagesPath": "C:\\Users\\scher\\.nuget\\packages\\",
+        "outputPath": "D:\\GitHub\\GreenEnergy\\GreenEnergyDatabase\\GE_BD\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Виталик\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\scher\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +29,6 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -38,7 +40,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
@@ -61,12 +62,18 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.2, 3.1.2]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

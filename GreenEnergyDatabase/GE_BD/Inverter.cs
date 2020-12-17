@@ -14,7 +14,7 @@ namespace GE_DB
         public string Type { get; set; }
         public double Price { get; set; }
 
-        public byte[] Image { get; set; }
+        public object Image { get; set; }
 
         public int Amount_of_phase { get; set; }
         public int Amount_MPP_trackers { get; set; }

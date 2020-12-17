@@ -15,7 +15,7 @@ namespace GE_DB
         public string Material { get; set; }
         public double Price { get; set; }
         
-        public byte[] Image { get; set; }
+        public object Image { get; set; }
 
         public double Voltage_work { get; set; }
         public double Amperage_work { get; set; }

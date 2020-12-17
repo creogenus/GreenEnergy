@@ -1,29 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+#nullable disable
 
 namespace test_map
 {
-    public class EnergySource
+    public partial class EnergySource
     {
-        int amount; 
-        string brand; 
-        public string name { get; set; }
-        string material; 
-        double voltage; 
-        double amperage; 
-        double price; 
-        public EnergySource(int amount, string brand, string name, string material, double voltage, double amperage, double price)
-        {
-            this.amount = amount;
-            this.brand = brand;
-            this.name = name;
-            this.material = material;
-            this.voltage = voltage;
-            this.amperage = amperage;
-            this.price = price*amount;
-        }
+        public int Id { get; set; }
+
+        public string Name { get; set; }
+        public string Brand { get; set; }
+        public string Type { get; set; }
+        public string Material { get; set; }
+        public double Price { get; set; }
+        
+        public byte [] Image { get; set; }
+
+        public double Voltage_work { get; set; }
+        public double Amperage_work { get; set; }
+
+        public double Short_circuit_Amperage { get; set; }
+
+        public double Voltage_max { get; set; }
+        public double Amperage_max { get; set; }
+
+        public double Height { get; set; }
+        public double Width { get; set; }
+
+        public double A_Coefficient { get; set; }
+
     }
 }

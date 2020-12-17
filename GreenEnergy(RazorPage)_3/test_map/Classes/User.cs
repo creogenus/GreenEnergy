@@ -16,7 +16,7 @@ namespace test_map
         public User(Region rg)
         {
             region = rg;
-            chosen_region = rg.GetName();
+            chosen_region = rg.Name;
             //не хвататет выбранных значений для бюджета и мощности
         }
         
@@ -24,7 +24,7 @@ namespace test_map
         {
             double budget = bdgt;
             region = rg;
-            chosen_region = rg.GetName();
+            chosen_region = rg.Name;
             //не хвататет выбранного значения для мощности
         }
 
@@ -32,7 +32,7 @@ namespace test_map
         {
             power = pwr;
             region = rg;
-            chosen_region = rg.GetName();
+            chosen_region = rg.Name;
             //не хвататет выбранного значения для бюджета
         }
 
@@ -41,7 +41,7 @@ namespace test_map
             budget = bdgt;
             power = pwr;
             region = rg;
-            chosen_region = rg.GetName();
+            chosen_region = rg.Name;
         }
 
     }

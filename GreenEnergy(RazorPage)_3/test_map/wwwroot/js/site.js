@@ -20,12 +20,13 @@ function findRegion(id) {
     })
 }
 
-function findUsers(id) {
-    var name = id;
+function findUsers(Province_id) {
+    var id_p = Province_id;
+   // var id_r = Region_id;
     $.ajax({
         type: 'GET',
         url: '?handler=FindUser',
-        data: { name },
+        data: { id_p },
         success: function (data) {
             $('.description').html(data);
         },

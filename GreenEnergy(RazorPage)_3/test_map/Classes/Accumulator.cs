@@ -1,39 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+#nullable disable
 
 namespace test_map
 {
-    public class Accumulator
+    public partial class Accumulator
     {
-        int amount;
-        double capacity; 
-        double weight; 
-        double guarantee; 
-        double voltage; 
-        double resource;  
-        string technology;
-        string type_of_terminal; 
-        string brand; 
-        public string name { get; set; } 
-        double price; 
+        public int Id { get; set; }
 
-        public Accumulator(int amount, double capacity, double weight, double guarantee,double voltage, double resource, string technology, string type_of_terminal, string brand, string name, double price)
-        {
-            this.amount = amount;
-            this.capacity = capacity;
-            this.weight = weight;
-            this.guarantee = guarantee;
-            this.voltage = voltage;
-            this.resource = resource;
-            this.technology = technology;
-            this.type_of_terminal = type_of_terminal;
-            this.brand = brand;
-            this.name = name;
-            this.price = price * amount;
-        }
+        public string Name { get; set; }
+        public string Brand { get; set; }
+        public string Material { get; set; }
+        public double Price { get; set; }
 
+        public byte [] Image { get; set; }
+
+        public double Capacity { get; set; }
+        public double Resource { get; set; }
+
+        public double Power { get; set; }
+        public double Voltage { get; set; }
+        public double Amperage { get; set; }
+
+        public double Height { get; set; }
+        public double Width { get; set; }
+        public double Weight { get; set; }
     }
 }

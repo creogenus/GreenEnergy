@@ -1,46 +1,84 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using System.IO;
+
+#nullable disable
 
 namespace test_map
 {
-    public class Region
+    public partial class Region
     {
-        string name;
-        public double intensity { get; set; }
-        public double windiness { get; set; }
-        public double average_temperature { get; set; }
-        public double humidity { get; set; }
+        public int Id { get; set; }
+
+        public int Province_ID { get; set; }
+        public int InProvince_ID { get; set; }
+
+        public string Name { get; set; }
+
+        //Можно описание
+
+        public double Latitude_degrees { get; set; }
+        public double Latitude_minutes { get; set; }
+        public double Latitude_seconds { get; set; } 
+        public double Longitude_degrees { get; set; }
+        public double Longitude_minutes { get; set; }
+        public double Longitude_seconds { get; set; }
+        public double GMT_dif { get; set; }
 
 
-        public Region(string n)
-        {
-            name = n;
-            //функционал временного формирования региона, в будущем данные будут браться из БД
+        public double Avg_Temp_Winter { get; set; }
+        public double Avg_Temp_Spring { get; set; }
+        public double Avg_Temp_Summer { get; set; }
+        public double Avg_Temp_Autumn { get; set; }
 
-            StreamReader SR = new StreamReader("test-db-region.txt");
-            bool stop = false;
-            while(!stop)
-            {
-                string [] buffer_array = SR.ReadLine().Split('-');
-                if (name == buffer_array[0])
-                {
-                    intensity = Convert.ToDouble(buffer_array[1]);
-                    windiness = Convert.ToDouble(buffer_array[2]);
-                    average_temperature = Convert.ToDouble(buffer_array[3]);
-                    humidity = Convert.ToDouble(buffer_array[4]);
-                    stop = true;
-                }
-            }
-            SR.Close();
-        }
 
-        public string GetName()
-        {
-            return name;
-        }
+        public double Avg_Widness_Winter { get; set; }
+        public double Avg_Widness_Spring { get; set; }
+        public double Avg_Widness_Summer { get; set; }
+        public double Avg_Widness_Autumn { get; set; }
+
+
+        public double Avg_Radiation_Winter { get; set; }
+        public double Avg_Radiation_Spring { get; set; }
+        public double Avg_Radiation_Summer { get; set; }
+        public double Avg_Radiation_Autumn { get; set; }
+
+
+        public double Avg_Humidity_Winter { get; set; }
+        public double Avg_Humidity_Spring { get; set; }
+        public double Avg_Humidity_Summer { get; set; }
+        public double Avg_Humidity_Autumn { get; set; }
+
+
+        public double Avg_SunHours_Winter { get; set; }
+        public double Avg_SunHours_Spring { get; set; }
+        public double Avg_SunHours_Summer { get; set; }
+        public double Avg_Sunhours_Autumn { get; set; }
+
+
+        public double Avg_MainlyCloudyDays_Winter { get; set; }
+        public double Avg_MainlyCloudyDays_Spring { get; set; }
+        public double Avg_MainlyCloudyDays_Summer { get; set; }
+        public double Avg_MainlyCloudyDays_Autumn { get; set; }
+
+
+        public double Avg_CloudyDays_Winter { get; set; }
+        public double Avg_CloudyDays_Spring { get; set; }
+        public double Avg_CloudyDays_Summer { get; set; }
+        public double Avg_CloudyDays_Autumn { get; set; }
+
+
+        public double Avg_SynnyDays_Winter { get; set; }
+        public double Avg_SunnyDays_Spring { get; set; }
+        public double Avg_SunnyDays_Summer { get; set; }
+        public double Avg_SunnyDays_Autumn { get; set; }
+
+
+        public double Avg_Pressure_Winter { get; set; }
+        public double Avg_Pressure_Spring { get; set; }
+        public double Avg_Pressure_Summer { get; set; }
+        public double Avg_Pressure_Autumn { get; set; }
+
+
     }
 }

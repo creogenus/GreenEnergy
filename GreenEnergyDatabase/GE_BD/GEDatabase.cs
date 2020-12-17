@@ -11,6 +11,7 @@ namespace GE_DB
         public static GEDatabase Init(string Connection_String)
         {
             //"Server=(localdb)\\mssqllocaldb;Database=GE_BD;Trusted_Connection=True;"
+            //return new GEDatabase(Connection_String);
             return new GEDatabase(Connection_String);
         }
 
@@ -58,7 +59,7 @@ namespace GE_DB
             GE.Regions.Add(R);
             GE.SaveChanges();
         }
-        public void InverterInsert(Inverter I)
+        public void Inverter(Inverter I)
         {
             GE.Inverters.Add(I);
             GE.SaveChanges();

@@ -19,22 +19,25 @@ namespace test_map
 
         public ElectricStation [] CalculateMostEfficientStation()
         {
-           
+            PowerPanelCaluclation power_cal = new PowerPanelCaluclation();
             ElectricStation[] all_stations = ElectricStation.CreateConfigurations(estation.power,estation.budget);
+            List<ElectricStation> top_stations = new List<ElectricStation>();
             // temp method of calculation
-
-            for(int i = 0;  i < all_stations.Length; i++)
+            for (int i = 0; i < all_stations.Length; i++)
             {
-                all_stations[i].efficiency = all_stations[i].full_power / (all_stations[i].full_cost * region.average_temperature * 0.01 * region.humidity * 0.005 * region.intensity * 0.1 * region.windiness * 0.0003);
+            
+                if (power_cal.CalculatePower(all_stations[i].esource.Amperage_work * all_stations[i].esource.Voltage_work,
+                        all_stations[i].inverter.Efficiency, region.Avg_Temp_Summer, 25, all_stations[i].esource.A_Coefficient, region.Avg_Humidity_Summer,
+                        region.Avg_Widness_Summer, region.Avg_Pressure_Summer, region.Avg_Radiation_Summer, 1000, region.Longitude_degrees,
+                        region.Longitude_minutes, region.Longitude_seconds, region.Latitude_degrees, region.Latitude_minutes, region.Latitude_seconds,
+                        region.Avg_SunHours_Summer)>all_stations[i].power)
+                {
+                    top_stations.Add(all_stations[i]);
+                }
             }
-            ElectricStation[] top_stations = all_stations;
-            //need sort function
-            //
-            //
-            //
-            //
-            //
-            return top_stations;
+
+
+            return top_stations.ToArray();
         }
     }
 }
