@@ -58,7 +58,7 @@ namespace GE_DB
             GE.Regions.Add(R);
             GE.SaveChanges();
         }
-        public void Inverter(Inverter I)
+        public void InverterInsert(Inverter I)
         {
             GE.Inverters.Add(I);
             GE.SaveChanges();
