@@ -40,7 +40,7 @@ namespace test_map
         }
         public Region RegionFind(int Province_ID, int InProvince_ID)
         {
-            return GE.Regions.FirstOrDefault(R => R.Province_ID == Province_ID && R.InProvince_ID == InProvince_ID);
+            return GE.Regions.FirstOrDefault(R => (R.Province_ID == Province_ID && R.InProvince_ID == InProvince_ID));
         }
 
 

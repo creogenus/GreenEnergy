@@ -57,6 +57,7 @@ namespace test_map
                         ElectricStation e_station =
                             new ElectricStation(gE.AccumulatorFind(ac), gE.InverterFind(inv), gE.EnergySourceFind(e_s), power, budget
                             );
+                        e_station.full_cost = e_station.accumulator.Price + e_station.esource.Price + e_station.inverter.Price;
                         buffer_list.Add(e_station);
                     }
                 }

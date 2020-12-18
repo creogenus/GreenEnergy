@@ -25,13 +25,14 @@ namespace test_map
             // temp method of calculation
             for (int i = 0; i < all_stations.Length; i++)
             {
-            
-                if (power_cal.CalculatePower(all_stations[i].esource.Amperage_work * all_stations[i].esource.Voltage_work,
+                all_stations[i].full_power = power_cal.CalculatePower(all_stations[i].esource.Amperage_work * all_stations[i].esource.Voltage_work,
                         all_stations[i].inverter.Efficiency, region.Avg_Temp_Summer, 25, all_stations[i].esource.A_Coefficient, region.Avg_Humidity_Summer,
                         region.Avg_Widness_Summer, region.Avg_Pressure_Summer, region.Avg_Radiation_Summer, 1000, region.Longitude_degrees,
                         region.Longitude_minutes, region.Longitude_seconds, region.Latitude_degrees, region.Latitude_minutes, region.Latitude_seconds,
-                        region.Avg_SunHours_Summer)>all_stations[i].power)
+                        region.Avg_SunHours_Summer);
+                if (all_stations[i].full_power>all_stations[i].power)
                 {
+                    all_stations[i].efficiency = all_stations[i].full_power / (all_stations[i].esource.Amperage_work * all_stations[i].esource.Voltage_work * region.Avg_SunHours_Summer);
                     top_stations.Add(all_stations[i]);
                 }
             }
