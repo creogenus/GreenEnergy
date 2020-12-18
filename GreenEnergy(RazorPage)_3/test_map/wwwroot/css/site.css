@@ -708,16 +708,20 @@ footer {
         background-color: #00a650;
     }
 
-
+#nameObl {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 23px;    
+    margin-left:40%;
+}
 
 table {
     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
     font-size: 14px;
     border-radius: 10px;
     border-spacing: 0;
-    border-left-color:black;
+    border-left-color: black;
     text-align: center;
-    margin-bottom:15px;
+    margin-bottom: 15px;
 }
 
 th {

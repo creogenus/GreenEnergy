@@ -1,12 +1,16 @@
-﻿function refreshDesc() {
+﻿var regionID;
+
+function refreshDesc(nameR) {
     $('.description').html("");   
     $('.for_config').html("");
+    regionID = nameR;
 }
 
 
 
-function findRegion(id) {
-    var name = id;
+function findRegion(province_id) {
+    let str = province_id + "|" + regionID;
+    var name = str;
     $.ajax({
         type: 'GET',
         url: '?handler=FindRaion',
@@ -20,13 +24,13 @@ function findRegion(id) {
     })
 }
 
-function findUsers(Province_id) {
-    var id_p = Province_id;
-   // var id_r = Region_id;
+function findUsers(province_id) {
+    let str = province_id + "|" +regionID;
+    var name = str;
     $.ajax({
         type: 'GET',
         url: '?handler=FindUser',
-        data: { id_p },
+        data: { name },
         success: function (data) {
             $('.description').html(data);
         },

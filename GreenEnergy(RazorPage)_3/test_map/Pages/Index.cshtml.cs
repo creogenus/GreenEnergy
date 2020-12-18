@@ -17,20 +17,27 @@ namespace test_map.Pages
             _logger = logger;
         }
 
+        public static GEDatabase gE = GEDatabase.Init("Server=(localdb)\\mssqllocaldb;Database=GE_BD;Trusted_Connection=True;");
+
         public IActionResult OnGetFindRaion(string name)
         {
+            string[] id = name.Split('|');
+            int region_id = Convert.ToInt32(id[0]);
+            int province_id = Convert.ToInt32(id[1]);
+            //Region rg = gE.RegionFind(region_id,province_id);
             string text= $"<p>Конфигурации для региона \"{name}\"<p>";
-            //Region rg = new Region(name);
             //text += $"<p>({rg.GetName()} - {rg.average_temperature} - {rg.humidity} - {rg.intensity} - {rg.windiness})";
             return new JsonResult(text);
         }
 
-        public static GEDatabase gE = GEDatabase.Init("Server=(localdb)\\mssqllocaldb;Database=GE_BD;Trusted_Connection=True;");
-        public IActionResult OnGetFindUser(string province_id)
+
+        public IActionResult OnGetFindUser(string name)
         {
-            //int p_id = Convert.ToInt32(province_id.Remove(0, 9));
+            string[] id = name.Split('|');
+            int region_id = Convert.ToInt32(id[0]);
+            int province_id = Convert.ToInt32(id[1]);
             string out_str="";
-            Region rg = gE.RegionFind(1,1);
+            Region rg = gE.RegionFind(region_id, province_id);
             User user = new User(100000, 20, rg);
             ElectricStation e_s = new ElectricStation(user.power, user.budget);
             Efficiency eff = new Efficiency(e_s, user.region);
